@@ -1,15 +1,15 @@
-name: Build nazurin Image
+name: Build huggingface Image
 
 on:
   push:
-    branches: [ nazurin ]
+    branches: [ hug ]
     paths:
       - 'Dockerfile'
       - 'index.js'
       - 'package.json'
       - 'index.html'
   pull_request:
-    branches: [ nazurin ]
+    branches: [ hug ]
   workflow_dispatch:
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: nazurin 
+          ref: hug 
 
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
